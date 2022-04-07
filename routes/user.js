@@ -11,7 +11,7 @@ router.post("/", function (req, res, next) {
 });
 
 router.put("/:_id", function (req, res, next) {
-  User.findByIdAndUpdate({ _id: req.params._id }).then((data) =>
+  User.findByIdAndUpdate({ _id: req.params._id }, req.body).then((data) =>
     res.send({ status: true, result: data })
   );
 });
